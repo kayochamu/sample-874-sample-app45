@@ -9,13 +9,22 @@ body {
 }
 
 .navbar-inverse {
+    background-color:#c12d8e;
+    border-color: #e6d7d7;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: #c12d8e;
-    border-color: #e6d7d7;;
 }
 
 a{
     color: #fff !important;
     font-weight: bold;
+}
+
+
+.dropdown-menu {
+    background-color: #c5a0a0;
 }
 
 #top-main-title {
@@ -47,7 +56,6 @@ a{
 .container {
     width: 970px;
 }
-
 
 
 section {
