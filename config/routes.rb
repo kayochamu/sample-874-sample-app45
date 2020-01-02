@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'task/top'
+  
+  
+
+  get 'tasks/create' ,to: 'tasks#create'
 
   root 'static_pages#top'
+  
   get '/signup', to: 'users#new'
   
   get    '/login', to: 'sessions#new'
