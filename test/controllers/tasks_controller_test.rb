@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
-  test "should get top" do
-    get tasks_top_url
+  test "should get new" do
+    get tasks_new_url
     assert_response :success
   end
 

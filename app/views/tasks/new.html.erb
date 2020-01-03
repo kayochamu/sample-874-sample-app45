@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ 
+
+<% provide(:title, 'New') %>
+
+
+<html><head><style type="text/css">.turbolinks-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition: width 300ms ease-out, opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
+}</style>
+
+
+    <title>New Task | Task App</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="if4wJrCfnxoB+Oi7fo44vARGKSxkC/ieLcoe040cPD7eyYcfCfsuadgPldEJQOgu3JdaiPgJEPSdZrmm2omJbQ==" />
+    <link rel="stylesheet" media="all" href="/assets/application-0e5d7c8cc18bd52eeabc1c5477d3b494997c763fe01630943b441776e7ad493d.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-b448791b18a9452cee489df10d734ac2ccdefa3cdd5db733d63988d121bd2408.js" data-turbolinks-track="reload"></script>
+    <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+<![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse" id="header">
+  <div class="container">
+    <a id="logo" href="/">Task App</a>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="header-list" href="/">トップ</a></li>
+            <li><a class="header-list" href="/users">利用者一覧</a></li>
+          <li><a class="header-list" href="/users/2/tasks/new">タスク作成</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown" id="dropdown-title">
+              ゲスト管理者 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header">ユーザー</li>
+              <li><a href="/users/2">プロフィール</a></li>
+              <li><a href="/users/2/edit">設定</a></li>
+              <li class="dropdown-header">タスク</li>
+              <li><a href="/users/2/tasks">タスク一覧</a></li>
+              
+              <li class="divider"></li>
+              <li><a rel="nofollow" data-method="delete" href="/logout">ログアウト</a></li>
+            </ul>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+ <div class="container">
+<h1>タスク新規作成</h1>
+
+<label class="label-form" for="task_name">名称</label>
+<input class="form-control" type="text" name="task[name]">
+
+
+<label class="label-form" for="task_description">詳細</label>
+ <textarea rows="5" class="form-control" name="task[description]"></textarea>
+  
+  <div style="margin-top: 10px;">
+   <input type="submit" name="commit" value="新規登録" class="btn btn-lg btn-primary btn-form" data-disable-with="新規登録">
+   
+ 

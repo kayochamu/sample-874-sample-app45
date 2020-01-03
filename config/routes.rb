@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   
 
-  get 'tasks/create' ,to: 'tasks#create'
+  get '/tasks/new',to: 'tasks#new'
+  get '/tasks/create' ,to: 'tasks#create'
+  
 
   root 'static_pages#top'
   
