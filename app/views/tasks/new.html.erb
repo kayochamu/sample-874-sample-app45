@@ -2,6 +2,7 @@
  
 
 <% provide(:title, 'New') %>
+ <title><%= yield(:title) %> | tasks app</title>
 
 
 <html><head><style type="text/css">.turbolinks-progress-bar {
@@ -35,17 +36,17 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a class="header-list" href="/">トップ</a></li>
             <li><a class="header-list" href="/users">利用者一覧</a></li>
-          <li><a class="header-list" href="/users/2/tasks/new">タスク作成</a></li>
+          
           <li class="dropdown">
             <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown" id="dropdown-title">
-              ゲスト管理者 <b class="caret"></b>
+            <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">ユーザー</li>
-              <li><a href="/users/2">プロフィール</a></li>
+              <li><a href="">プロフィール</a></li>
               <li><a href="/users/2/edit">設定</a></li>
               <li class="dropdown-header">タスク</li>
-              <li><a href="/users/2/tasks">タスク一覧</a></li>
+              <li><a href="/tasks/index">タスク一覧</a></li>
               
               <li class="divider"></li>
               <li><a rel="nofollow" data-method="delete" href="/logout">ログアウト</a></li>
@@ -68,5 +69,5 @@
   
   <div style="margin-top: 10px;">
    <input type="submit" name="commit" value="新規登録" class="btn btn-lg btn-primary btn-form" data-disable-with="新規登録">
-   
+  
  

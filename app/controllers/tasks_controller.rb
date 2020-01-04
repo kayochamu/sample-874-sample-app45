@@ -1,7 +1,10 @@
 class TasksController < ApplicationController
-  def new
+  def delete
+    
   end
+
+def new
   
-  def create
-  end
+end
+
 end
