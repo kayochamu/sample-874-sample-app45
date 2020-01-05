@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-  
-  
  
-  get 'tasks/delete'
-
-  get 'tasks/update'
-
-  get 'tasks/index',to: 'tasks#index'
-
-  get '/tasks/new',to: 'tasks#new'
-  get '/tasks/create' ,to: 'tasks#create'
-  get '/tasks/new',to: 'tasks#new'
-  post'/tasks/create', to: 'tasks#create'
+ 
+ #get 'tasks/new', to: 'tasks#new'
+ #get 'tasks/edit', to:'tasks#edit'
+ #get 'tasks/show', to:'tasks#show'
+# get 'tasks/index', to:'tasks#index'
+# post 'tasks/create', to:'tasks#create'
+ 
+ 
+ 
   root 'static_pages#top'
-  get '/users/:id', to: 'tasks#new'
+  
   
   get '/signup', to: 'users#new'
   
@@ -22,7 +19,17 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
    
   
-  resources :users
+  
+    resources :users do
+    member do
+    end
+    resources :tasks
+  end
 end
+  
+  
+  
 
 
+
+ 
