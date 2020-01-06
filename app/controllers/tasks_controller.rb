@@ -1,11 +1,31 @@
 class TasksController < ApplicationController
  
-    before_action :logged_in_user,only:[:new,:show,:edit,:index]
-    before_action :correct_user,only:[:new,:index,:create,:updete,:destroy,:show,]
-    before_action :set_user,only:[:new,:index,]
-    before_action :set_task,only:[:show,:edit,:uptate,:destroy]
+before_action :set_user,only:[:new,:index,]
+before_action :set_task,only:[:show,:edit,:uptate,:destroy]
+before_action :logged_in_user,only:[:new,:show,:edit,:index]
+before_action :correct_user,only:[:new,:index,:create,:updete,:destroy,:show,]
 
-   
+def new 
+  @user = User.find(params[:user_id])
+  @task = Task.new
+end  
+
+def
+  set_user
+   @cuuser = User.find(params[:user_id])
+   @task = Task.new
+end
+
+def
+  correct_user
+   @cuuser = User.find(params[:user_id])
+   @task = Task.new
+end
+
+
+
+    
+
  def index
    @user = User.find(params[:user_id])
    @tasks = Task.all
@@ -33,6 +53,12 @@ def create
 end
    
   
-  def new 
-     @user = User.find(params[:user_id])
-  end  
+   def
+   logged_in_user
+    unless logged_in? || host_logged_in? 
+      store_location
+      flash[:danger]= "ログインしてください"
+      redirect_to login_url
+    end
+   end
+ 

@@ -57,16 +57,26 @@
 </header>
 
  <div class="container">
+
+
 <h1>タスク新規作成</h1>
+<% if logged_in? %>
+ <% provide(:title, @user.name) %>
+<% end %>
 
-<label class="label-form" for="task_name">名称</label>
-<input class="form-control" type="text" name="task[name]">
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_with(model: @task, url: user_tasks_path(@user), local: true) do |f| %>
+      <%= render partial: 'shared/error_messages', locals: { obj: @task } %>
 
+      <%= f.label :name, class: "label-form" %>
+      <%= f.text_field :name, class: "form-control" %>
 
-<label class="label-form" for="task_description">詳細</label>
- <textarea rows="5" class="form-control" name="task[description]"></textarea>
-  
-  <div style="margin-top: 10px;">
-   <input type="submit" name="commit" value="新規登録" class="btn btn-lg btn-primary btn-form" data-disable-with="新規登録">
-  
- 
+      <%= f.label :description, class: "label-form" %>
+      <%= f.text_area :description, rows: 5, class: "form-control" %>
+
+      <%= f.submit "新規登録", class: "btn btn-lg btn-primary btn-form" %>
+    <% end %>
+  </div>
+</div>
+
